@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
-import Dashboard from './components/dashboard/Dashboard'
-import Navbar from './components/layout/Navbar'
+import Dashboard from './components/dashboard/Dashboard';
+import Navbar from './components/layout/Navbar';
 import CreateReview from './components/review/CreateReview';
-import ReviewDetails from './components/review/ReviewDetails'
+import ReviewDetails from './components/review/ReviewDetails';
 
 function App() {
   return (

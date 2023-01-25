@@ -1,16 +1,17 @@
-import React from 'react'
-import ReviewSummary from './ReviewSummary'
-const ReviewList = () => {
+import React from 'react';
+import ReviewSummary from './ReviewSummary';
+
+const ReviewList = ({reviews}) => {
 
   return (
     <div className="project-list section">
-
-      <ReviewSummary/>
-      <ReviewSummary/>
-      <ReviewSummary/>
-      <ReviewSummary/>
-      <ReviewSummary/>
-      
+      {
+        reviews && reviews.map(review => {
+          return (
+            <ReviewSummary review={review} key={review.id} />
+          )
+        })
+      }
     </div>
   )
 }
