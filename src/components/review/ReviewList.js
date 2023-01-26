@@ -9,7 +9,9 @@ const ReviewList = ({reviews}) => {
       {
         reviews && reviews.map(review => {
           return (
-            <ReviewSummary review={review} key={review.id} />
+            <Link to={`/review/${review.id}`}>
+              <ReviewSummary review={review} key={review.id} />
+            </Link>
           )
         })
       }
