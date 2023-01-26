@@ -1,9 +1,9 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyBWWN8X-0qTYQj68-KyS6DTAAkqySMWIdY",
   authDomain: "book-review-app-ce6d5.firebaseapp.com",
   projectId: "book-review-app-ce6d5",
