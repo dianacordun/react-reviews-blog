@@ -3,8 +3,8 @@
 A project for the Advanced Frontend course consisting of an app where a user can post reviews, with authentication and cloud functions.
 
 ## Technologies 
-+ **Client side:** React & Redux
-+ **Server side:** Firestore database, Firebase auth, Cloud Functions
++ **Client-side:** React & Redux
++ **Server-side:** Firestore database, Firebase auth, Cloud Functions
 
 ## Project requirements
 - [x] multiple routes
