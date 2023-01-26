@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createReview } from "../../store/actions/reviewActions";
 
 class CreateReview extends Component {
   state = {
@@ -12,7 +14,7 @@ class CreateReview extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.createReview(this.state);
   }
   render() {
     return (
@@ -36,4 +38,10 @@ class CreateReview extends Component {
   }
 }
 
-export default CreateReview
+const mapDispatchToProps = dispatch => {
+  return {
+    createReview: (review) => dispatch(createReview(review))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CreateReview)
