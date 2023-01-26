@@ -9,9 +9,9 @@ return (dispatch, getState, {getFirestore}) => {
     authorId: 12345,
     createdAt: new Date()
     }).then(() => {
-    dispatch({ type: 'CREATE_REVIEW_SUCCESS' });
+        dispatch({ type: 'CREATE_REVIEW_SUCCESS' }); // this will only execute after the add task is complete
     }).catch(err => {
-    dispatch({ type: 'CREATE_REVIEW_ERROR' }, err);
+        dispatch({ type: 'CREATE_REVIEW_ERROR' }, err);
     });
 }
 };

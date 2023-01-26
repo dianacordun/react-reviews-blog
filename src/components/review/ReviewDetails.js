@@ -1,8 +1,8 @@
 import React from 'react';
-import { useParams} from 'react-router-dom';
 
-const ReviewDetails = () => {
-  let {id} = useParams();
+const ReviewDetails = (props) => {
+  const id = props.match.params.id;
+
   return (
     <div className="container section project-details">
       <div className="card z-depth-0">

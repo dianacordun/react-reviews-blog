@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewSummary from './ReviewSummary';
+import { Link } from 'react-router-dom';
 
 const ReviewList = ({reviews}) => {
 
