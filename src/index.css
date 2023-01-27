@@ -17,6 +17,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   background: url(/public/img/background.png) no-repeat;
+  background-attachment: fixed;
   background-size: 150%;
   min-height: 100%;
 }
@@ -28,6 +29,10 @@ form{
 
 form button, form h5{
   margin: 20px 0;
+}
+
+.card-content{
+  word-wrap: break-word;
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]),
