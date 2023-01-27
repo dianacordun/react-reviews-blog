@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createReview } from "../../store/actions/reviewActions";
+import { Redirect } from 'react-router-dom';
 
 class CreateReview extends Component {
   state = {
@@ -17,6 +18,9 @@ class CreateReview extends Component {
     this.props.createReview(this.state);
   }
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to='/signin'/>
+
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
@@ -38,10 +42,16 @@ class CreateReview extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     createReview: (review) => dispatch(createReview(review))
   }
 }
 
-export default connect(null, mapDispatchToProps)(CreateReview)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateReview)
