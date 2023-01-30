@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: url(/public/img/background.png) no-repeat;
+  background: url(/public/img/background.png) repeat;
   background-attachment: fixed;
   background-size: 150%;
   min-height: 100%;
