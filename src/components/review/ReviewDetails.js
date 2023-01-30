@@ -4,11 +4,26 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom';
 import moment from 'moment';
+import firebase from '../../config/fbConfig';
 
 const ReviewDetails = (props) => {
   const { review, auth } = props;
   if (!auth.uid) return <Redirect to='/signin'/>
-  
+
+  function handleClick() {
+    deleteReview(props.match.params.id);
+    props.history.push('/');
+  }
+
+  const deleteReview = (id) => {
+    const firestore = firebase.firestore();
+    firestore.collection("reviews").doc(id).delete().then(() => {
+      console.log("Document successfully deleted!");
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
+  };
+
   if(review){
     return (
       <div className="container section project-details">
@@ -18,7 +33,11 @@ const ReviewDetails = (props) => {
             <p>{review.content}</p>
           </div>
           <div className="card-action grey lighten-4 grey-text">
-            <div>Posted by {review.authorFirstName} {review.authorLastName}</div>
+            {(auth.uid === review.authorId) ? (
+              <div>
+                <div className="post-details">Posted by you </div> 
+                <button className="btn pink lighten-1 delete-post" onClick={handleClick}>Delete &#128465; </button> 
+              </div>  ) : <div>Posted by {review.authorFirstName} {review.authorLastName}</div>}
             <div>{moment(review.createdAt.toDate().toString()).calendar()}</div>
           </div>
         </div>

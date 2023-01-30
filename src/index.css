@@ -55,6 +55,16 @@ form button, form h5{
   color: #26a69a;
 }
 
+.post-details{
+  float: left;
+  width: 80%;
+}
+
+.delete-post{
+  float: right;
+  width: 20%;
+}
+
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
