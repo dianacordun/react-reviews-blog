@@ -1,4 +1,5 @@
 # Advanced Frontend: React & Angular
+## [Here](https://book-review-app-ce6d5.web.app/) you can view & test the app.
 
 A project for the Advanced Frontend course consisting of an app where a user can read and post reviews, with real-time notifications, authentication and cloud functions.
 
